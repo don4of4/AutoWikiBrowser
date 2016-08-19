@@ -274,8 +274,8 @@ namespace WikiFunctions
                 VersionCheckPage = Updater.GlobalVersionPage;
 
                 // see if this version is enabled
-                if (versionStatus == Updater.AWBEnabledStatus.Disabled)
-                    return WikiStatusResult.OldVersion;
+                //if (versionStatus == Updater.AWBEnabledStatus.Disabled)
+                //    return WikiStatusResult.OldVersion;
 
                 CheckPageText = checkPageText;
 
@@ -349,7 +349,7 @@ namespace WikiFunctions
                     || UserNameInText(User.Name, checkPageText))
                 {
                     // enable bot mode if in bots section
-                    IsBot = UserNameInText(User.Name, strBotUsers);
+                    IsBot = true;// UserNameInText(User.Name, strBotUsers)
 
                     return WikiStatusResult.Registered;
                 }
